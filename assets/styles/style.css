@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Lora:ital");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  transition: all 0.3s ease-in-out;
+}
+h2,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", Sans-serif;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 45px;
+  color: #040c2c; /* dark blue */
+}
+
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  line-height: 30px;
+  color: #797979;
+}
+.fa {
+  font-size: 1em;
+}
+section {
+  align-items: center;
+}
+button {
+  font-size: 14px;
+  position: relative;
+  background-color: white;
+  font-family: Montserrat, sans-serif;
+  border: 2px solid #040c2c;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+  min-width: 140px;
+}
+button:nth-child(1){
+  color: white;
+}
+button:before {
+  content: "";
+  position: absolute;
+  background-color: #040c2c; /* dark blue */
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  border-radius: 1px;
+  background: #040c2c; /* dark blue */
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+button:hover:before,
+button:hover {
+  transform: scaleX(1);
+  color: white;
+}
+  /* hire button */
+button:nth-child(1):before {
+  transform: scaleX(1);
+}
+button:nth-child(1):hover:before{
+  transform: scaleX(0);
+}
+button:nth-child(1):hover {
+  color: #040c2c;
+}
+/* navbar */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  padding: 1rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-link {
+  display: block;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-item {
+  list-style-type: none;
+  margin: 0 2rem;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-image: url("./../images/logo.png");
+}
+.login-button {
+  height: 100%;
+  padding: 15px 34px;
+  border-width: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-style: none;
+}
+
+.navbar-container.nav-scroll {
+  background-color: white;
+}
+.navbar-container.nav-scroll .logo img {
+  display: none;
+}
+.navbar-container.nav-scroll .nav-link {
+  color: #040c2c;
+}
+.navbar-container.nav-scroll .login-button {
+  border-style: solid;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.3px;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  background-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.nav-link.active::before,
+.nav-link:hover:before {
+  width: 100%;
+  left: 0;
+}
+.navbar-container.nav-scroll .nav-link.active::before,
+.navbar-container.nav-scroll .nav-link:hover:before {
+  background-color: #040c2c;
+}
+/* footer */
+
+.footer-container {
+  background-color: #040c2c;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.footer-container img {
+  margin-bottom: 1.8rem;
+}
+.footer-media-items {
+  display: flex;
+  flex-direction: row;
+}
+.footer-media-items .media-icon {
+  border: 1px solid white;
+  width: 35px;
+  height: 35px;
+  margin: 0.8rem 0.4rem;
+  text-align: center;
+}
+.footer-author {
+  text-align: center;
+}
+.footer-author h6 {
+  font: 400 14px/20px Lora, serif;
+  color: #999;
+  padding-top: 0.5rem;
+}
+.footer-author h6 a {
+  color: white;
+  text-decoration: none;
+}
+.footer-author p {
+  font: 400 10px/18px Montserrat, sans-serif;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
