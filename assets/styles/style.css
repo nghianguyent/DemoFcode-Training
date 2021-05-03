@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   transition: all 0.3s ease-in-out;
 }
 h2,
@@ -58,7 +58,7 @@ button {
   z-index: 1;
   min-width: 140px;
 }
-button:nth-child(1){
+button:nth-child(1) {
   color: white;
 }
 button:before {
@@ -83,11 +83,11 @@ button:hover {
   transform: scaleX(1);
   color: white;
 }
-  /* hire button */
+/* hire button */
 button:nth-child(1):before {
   transform: scaleX(1);
 }
-button:nth-child(1):hover:before{
+button:nth-child(1):hover:before {
   transform: scaleX(0);
 }
 button:nth-child(1):hover {
@@ -99,6 +99,7 @@ button:nth-child(1):hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   position: fixed;
   width: 100%;
   z-index: 9999;
@@ -110,7 +111,7 @@ button:nth-child(1):hover {
 .menu-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 .nav-link {
@@ -127,13 +128,14 @@ button:nth-child(1):hover {
 }
 .nav-item {
   list-style-type: none;
-  margin: 0 2rem;
 }
 
 .logo {
+  display: inline-block;
   width: 60px;
   height: 60px;
-  background-image: url("./../images/logo.png");
+  background-image: url("./../images/logo-white.png");
+  background-repeat: no-repeat;
 }
 .login-button {
   height: 100%;
@@ -143,12 +145,23 @@ button:nth-child(1):hover {
   font-weight: 600;
   border-style: none;
 }
-
+.login-button.button-two {
+  display: none;
+}
+.hamburger-menu {
+  display: none;
+}
+.hamburger-menu .line {
+  background-color: #040c2c; /* dark blue */
+  height: 2px;
+  width: 30px;
+  margin-bottom: 5px;
+}
 .navbar-container.nav-scroll {
   background-color: white;
 }
-.navbar-container.nav-scroll .logo img {
-  display: none;
+.navbar-container.nav-scroll .logo {
+  background-image: url("./../images/logo.png");
 }
 .navbar-container.nav-scroll .nav-link {
   color: #040c2c;
@@ -177,6 +190,47 @@ button:nth-child(1):hover {
 .navbar-container.nav-scroll .nav-link:hover:before {
   background-color: #040c2c;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+  .login-button {
+    display: none;
+    margin-right: 20px;
+  }
+  .login-button.button-two {
+    display: inline-block;
+    margin-left: auto;
+  }
+  .menu-items {
+    display: none;
+    justify-content: left;
+    align-items: flex-start;
+    background-color: white;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-items .nav-link {
+    color: #040c2c;
+  }
+  .menu-items .nav-link:before {
+    background-color: #040c2c;
+  }
+  .menu-items.active {
+    display: flex;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* footer */
 
 .footer-container {
@@ -221,4 +275,96 @@ button:nth-child(1):hover {
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+/* responsive */
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
 }

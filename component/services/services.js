@@ -1,10 +1,9 @@
 const renderServicesElement = (logoClassName, titleText, descriptionText) => {
+    let itemsListContainerElement = document.createElement('div');
     let itemsContainerElement = document.createElement('li');
-    let iconContainerElement = document.createElement('div');
     // create icon element for card
     let iconLogoElement = document.createElement('i');
     // create title and description elements
-    let contentContainerElement = document.createElement('div');
     let titleElement = document.createElement('h4');
     let descriptionElement = document.createElement('p');
     // create text node for title and description
@@ -12,26 +11,21 @@ const renderServicesElement = (logoClassName, titleText, descriptionText) => {
     let title = document.createTextNode(titleText);
 
     // create properties for elements
+    itemsListContainerElement.className = 'col-4 col-s-6';
     itemsContainerElement.className = 'services-item-container';
     // logo
-    iconContainerElement.className = 'services-item__logo';
     iconLogoElement.className = logoClassName;
-    // content
-    contentContainerElement.className = 'services-item__content';
-
+    
     //add child for element
-    //content
     titleElement.appendChild(title);
     descriptionElement.appendChild(description);
-    contentContainerElement.appendChild(titleElement);
-    contentContainerElement.appendChild(descriptionElement);
-    // icon logo
-    iconContainerElement.appendChild(iconLogoElement);
     // item container
-    itemsContainerElement.appendChild(iconContainerElement);
-    itemsContainerElement.appendChild(contentContainerElement);
-    
-    return itemsContainerElement;
+    itemsContainerElement.appendChild(iconLogoElement);
+    itemsContainerElement.appendChild(titleElement);
+    itemsContainerElement.appendChild(descriptionElement);
+    itemsListContainerElement.appendChild(itemsContainerElement);
+
+    return itemsListContainerElement;
 }
 
 const renderServicesItems = () => {

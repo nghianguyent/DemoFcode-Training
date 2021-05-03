@@ -75,3 +75,11 @@ window.addEventListener('scroll',  () => {
     });
 });
 
+// action for hamburger button 
+
+let hamburgerMenu = document.getElementById('hamburgerMenu');
+
+hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    document.getElementById('menuItems').classList.toggle('active');
+});
