@@ -34,7 +34,7 @@ const renderContactFormElement = (placeholder, type) => {
     let formInputElement = document.createElement('input');
 
     // create properties for element
-    formListElement.className = "form-input";
+    formListElement.className = "col-6 form-input";
     formInputElement.className = "form-control";
     formInputElement.type = type;
     formInputElement.placeholder = placeholder;

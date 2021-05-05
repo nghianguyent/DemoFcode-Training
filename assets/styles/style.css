@@ -218,16 +218,41 @@ button:nth-child(1):hover {
   .menu-items .nav-link {
     color: #040c2c;
   }
+  .menu-items {
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    align-items: flex-start;
+    -webkit-animation: faded 0.4s linear;
+    animation: faded 0.4s linear;
+    transition: all 0.4s ease-in-out;
+  }
   .menu-items .nav-link:before {
     background-color: #040c2c;
   }
   .menu-items.active {
-    display: flex;
+    display: flex;   
   }
   .hamburger-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .hamburger-menu .line {
+    background-color: white;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar-container.nav-scroll .line {
+    background-color: #040c2c;
+  }
+  .hamburger-menu.active .line:nth-child(1) {
+    transform: translate(0, 5px) rotate(45deg);
+  }
+  .hamburger-menu.active .line:nth-child(2) {
+    display: none;
+  }
+  .hamburger-menu.active .line:nth-child(3) {
+    transform: translate(0, -2px) rotate(-45deg);
   }
 }
 
@@ -366,5 +391,16 @@ button:nth-child(1):hover {
   }
   .col-12 {
     width: 100%;
+  }
+}
+
+@keyframes faded{
+  0%{
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
